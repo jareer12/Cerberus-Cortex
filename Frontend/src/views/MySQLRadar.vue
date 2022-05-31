@@ -1,5 +1,4 @@
 <script setup>
-import Footer from "../components/Footer.vue";
 import MySQLRadar from "../components/MySQLRadar.vue";
 </script>
 

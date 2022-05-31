@@ -21,25 +21,25 @@ export default {
             type="text"
             placeholder="MySQL Username"
             v-model="localStorage.MySQLRadarUsername"
-            class="bg-bray-400 focus:outline-none focus:scale-105 duration-500 transition-all focus:ring-emerald ring ring-transparent rounded shadow py-3 px-3 w-full"
+            :class="`bg-bray-400 focus:outline-none focus:scale-105 duration-500 transition-all focus:ring-${localStorage.color} ring ring-transparent rounded shadow py-3 px-3 w-full`"
           />
           <input
             type="text"
             placeholder="MySQL Host"
             v-model="localStorage.MySQLRadarHost"
-            class="bg-bray-400 focus:outline-none focus:scale-105 duration-500 transition-all focus:ring-emerald ring ring-transparent rounded shadow py-3 px-3 w-full"
+            :class="`bg-bray-400 focus:outline-none focus:scale-105 duration-500 transition-all focus:ring-${localStorage.color} ring ring-transparent rounded shadow py-3 px-3 w-full`"
           />
           <input
             type="text"
             v-model="localStorage.MySQLRadarDatabase"
             placeholder="MySQL Database"
-            class="bg-bray-400 focus:outline-none focus:scale-105 duration-500 transition-all focus:ring-emerald ring ring-transparent rounded shadow py-3 px-3 w-full"
+            :class="`bg-bray-400 focus:outline-none focus:scale-105 duration-500 transition-all focus:ring-${localStorage.color} ring ring-transparent rounded shadow py-3 px-3 w-full`"
           />
           <input
             v-model="localStorage.MySQLRadarPassword"
             type="password"
             placeholder="MySQL Password"
-            class="bg-bray-400 focus:outline-none focus:scale-105 duration-500 transition-all focus:ring-emerald ring ring-transparent rounded shadow py-3 px-3 w-full"
+            :class="`bg-bray-400 focus:outline-none focus:scale-105 duration-500 transition-all focus:ring-${localStorage.color} ring ring-transparent rounded shadow py-3 px-3 w-full`"
           />
           <button :class="`bg-${localStorage.color} rounded text-white`">
             Establish Connection
@@ -48,7 +48,7 @@ export default {
             v-model="localStorage.MySQLRadarPort"
             type="number"
             placeholder="MySQL Port"
-            class="bg-bray-400 focus:outline-none focus:scale-105 duration-500 transition-all focus:ring-emerald ring ring-transparent rounded shadow py-3 px-3 w-full"
+            :class="`bg-bray-400 focus:outline-none focus:scale-105 duration-500 transition-all focus:ring-${localStorage.color} ring ring-transparent rounded shadow py-3 px-3 w-full`"
           />
           <p class="col-span-2">
             The server will try to establish a connection with the given

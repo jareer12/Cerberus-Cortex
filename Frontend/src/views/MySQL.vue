@@ -5,7 +5,6 @@ import MySQLDashboard from "../components/MySQLDashboard.vue";
 
 <template>
   <main>
-    <Footer />
     <MySQLDashboard />
   </main>
 </template>

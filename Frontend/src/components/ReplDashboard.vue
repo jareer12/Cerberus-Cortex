@@ -18,21 +18,25 @@ export default {
         <div
           :class="`bg-bray-400 w-full p-4 rounded hover:scale-105 group duration-300 transition-all cursor-pointer`"
         >
-          <h1 :class="`text-xl font-bold`">MySQL SandBox</h1>
-          <p class="text-gray-400 mt-1">
-            A sandbox environment to run MySQL queries and all sorts of
-            functions related to MySQL.
-          </p>
+          <h1 :class="`text-xl font-bold`">Javascript Sandbox</h1>
+          <p class="text-gray-400 mt-1">Run Node.js in the web.</p>
         </div>
       </a>
       <a href="/mysql/radar">
         <div
           :class="`bg-bray-400 w-full p-4 rounded hover:scale-105 group duration-300 transition-all cursor-pointer`"
         >
-          <h1 :class="`text-xl font-bold`">MySQL Radar</h1>
-          <p class="text-gray-400 mt-1">
-            Check MySQL credentials by connecting to the server.
-          </p>
+          <h1 :class="`text-xl font-bold`">Lua Sandbox</h1>
+          <p class="text-gray-400 mt-1">Run Lua in the web.</p>
+        </div>
+      </a>
+
+      <a href="/mysql/radar">
+        <div
+          :class="`bg-bray-400 w-full p-4 rounded hover:scale-105 group duration-300 transition-all cursor-pointer`"
+        >
+          <h1 :class="`text-xl font-bold`">CMD</h1>
+          <p class="text-gray-400 mt-1">Command-line built in the web.</p>
         </div>
       </a>
     </main>

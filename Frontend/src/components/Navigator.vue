@@ -12,18 +12,12 @@ export default {
 
 <template>
   <main class="p-4 w-full">
-    <main class="bg-bray-400 w-full flex flex-wrap">
+    <main class="bg-bray-400 shadow-md rounded w-full flex flex-wrap">
       <a
-        href=""
+        href="/"
         :class="`p-4 duration-300 transition-all hover:text-white hover:bg-${localStorage.color}`"
       >
         Home
-      </a>
-      <a
-        href=""
-        :class="`p-4 duration-300 transition-all hover:text-white hover:bg-${localStorage.color}`"
-      >
-        Support
       </a>
     </main>
   </main>
