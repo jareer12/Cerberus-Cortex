@@ -5,30 +5,57 @@ export default {
   components: { Message },
   data() {
     return {
-      pfp() {
+      Me: {},
+      load() {
         try {
-          fetch(`${this.Settings.server.url}/send/${localStorage.SpaceID}`, {
+          fetch(`${this.Settings.server.url}/me`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              owner: "Rigby",
-              message: localStorage.Message,
+              token: localStorage.token,
             }),
           })
             .then((res) => res.json())
-            .then((res) => {
-              this.load();
+            .then((data) => {
+              this.Me = data.Data;
+              if (!data.Success) {
+                localStorage.clear();
+              }
             });
-          localStorage.removeItem("Message");
+        } catch {
+          localStorage.clear();
+        }
+      },
+      pfp() {
+        try {
+          console.log(this.Me.avatar);
+          fetch(`${this.Settings.server.url}/update-pfp`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              avatar: this.Me.avatar,
+              token: localStorage.token,
+            }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.Success) {
+                window.location.reload();
+              }
+            });
         } catch {}
       },
       Settings: window.Settings,
       localStorage: localStorage,
     };
   },
-  created() {},
+  created() {
+    this.load();
+  },
 };
 </script>
 
@@ -40,6 +67,7 @@ export default {
         <div class="grid-cols-8 grid gap-3">
           <input
             type="text"
+            v-model="Me.avatar"
             placeholder="Paste Image URL"
             class="col-span-7 bg-bray-400 py-4 px-4 rounded-lg w-full focus:outline-none"
           />

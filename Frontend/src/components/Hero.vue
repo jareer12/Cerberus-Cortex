@@ -5,8 +5,29 @@ export default {
   components: { Message },
   data() {
     return {
+      Me: {},
       load() {
-        console.log(`Loading New Data`);
+        //    console.log(`Loading Dashboard`);
+        try {
+          fetch(`${this.Settings.server.url}/me`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              token: localStorage.token,
+            }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              this.Me = data.Data;
+              if (!data.Success) {
+                localStorage.clear();
+              }
+            });
+        } catch {
+          localStorage.clear();
+        }
         try {
           fetch(`${this.Settings.server.url}/get/${localStorage.SpaceID}`)
             .then((response) => response.json())
@@ -23,7 +44,7 @@ export default {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              owner: "Rigby",
+              owner: this.Me.username,
               message: localStorage.Message,
             }),
           })
@@ -52,7 +73,7 @@ export default {
 </script>
 
 <template>
-  <main>
+  <main v-if="localStorage.token">
     <div class="w-full">
       <div class="w-full grid space-y-1 grid">
         <div class="grid-cols-8 grid">
@@ -77,6 +98,7 @@ export default {
           :content="Message.message"
           :avatar="`${Settings.server.url}/avatar/${Message.owner}`"
           :owner="Message.owner"
+          :me="Me"
         />
       </div>
     </div>

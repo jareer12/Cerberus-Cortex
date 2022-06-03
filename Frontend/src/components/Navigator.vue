@@ -14,7 +14,7 @@ export default {
             .then((res) => res.json())
             .then((res) => {
               localStorage.SpaceID = res.Data.Id;
-              window.location.reload();
+              window.location.href = "/";
             });
         } catch {}
       },
@@ -56,7 +56,7 @@ export default {
       <div class="border-bray-300 border-b-2 mt-5 mb-5"></div>
       <div class="space-y-3">
         <div
-          class="flex flex-wrap justify-center px-3 space-y-2"
+          class="flex flex-wrap justify-center px-3 space-y-3"
           v-if="localStorage.token"
         >
           <a
@@ -65,6 +65,15 @@ export default {
           >
             Settings
           </a>
+          <button
+            @click="
+              localStorage.removeItem('token');
+              window.location.href = '/';
+            "
+            :class="`w-full rounded-lg text-white shadow-${localStorage.color}-500/50 shadow-md bg-${localStorage.color} p-3`"
+          >
+            Logout
+          </button>
         </div>
         <div
           class="flex flex-wrap justify-center px-3 space-y-2"

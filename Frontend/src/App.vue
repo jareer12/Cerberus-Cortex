@@ -2,7 +2,9 @@
 import { RouterView } from "vue-router";
 import Navigator from "./components/Navigator.vue";
 if (window.location.pathname != "/login") {
-  if (!localStorage.token) window.location.href = "/login";
+  if (window.location.pathname != "/register") {
+    if (!localStorage.token) window.location.href = "/login";
+  }
 }
 </script>
 

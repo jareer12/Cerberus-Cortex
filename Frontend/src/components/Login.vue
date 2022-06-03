@@ -23,6 +23,7 @@ export default {
               }
             } else {
               localStorage.token = data.Data.token;
+              window.location.href = "/";
             }
           });
       },

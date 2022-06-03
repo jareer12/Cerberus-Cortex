@@ -7,7 +7,7 @@ export default {
     title: `Cerberus Cortex Dashboard - github.com/jareer12`,
   },
   theme: {
-    color: "valencia",
+    color: "brew",
   },
   ui: {
     footer: {
