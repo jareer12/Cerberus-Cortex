@@ -1,9 +1,9 @@
 <script setup>
-import Repl from "../components/ReplDashboard.vue";
+import Master from "@/components/Login.vue";
 </script>
 
 <template>
   <main>
-    <Repl />
+    <Master />
   </main>
 </template>

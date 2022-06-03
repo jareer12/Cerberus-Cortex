@@ -1,5 +1,5 @@
 <script setup>
-import Master from "@/components/Hero.vue";
+import Master from "@/components/Settings.vue";
 </script>
 
 <template>

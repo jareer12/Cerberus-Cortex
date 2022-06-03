@@ -1,12 +1,15 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
 import Navigator from "./components/Navigator.vue";
+if (window.location.pathname != "/login") {
+  if (!localStorage.token) window.location.href = "/login";
+}
 </script>
 
 <template>
-  <main>
+  <main class="grid grid-cols-6">
     <Navigator />
-    <RouterView />
+    <RouterView class="col-span-5" />
   </main>
 </template>
 
