@@ -94,7 +94,7 @@ Server.post("/register", function (req, res) {
   } else {
     res.json({
       Success: false,
-      Message: "An account this this username already exists",
+      Message: "An account with this username already exists",
     });
   }
 });
@@ -105,7 +105,7 @@ Server.post("/login", function (req, res) {
     if (req.body.password == User.password) {
       res.json({
         Success: true,
-        Message: "Succesfuly logged in",
+        Message: "Successfully logged in",
         Data: {
           token: User.token,
           userId: User.userId,
